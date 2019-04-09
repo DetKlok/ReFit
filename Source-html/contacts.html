@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "./components/head-content.html" %}
+</head>
+<body>
+	<div id="wrapper">
+		{% include "./components/header.html" %}
+		<main id="main">
+            <div class="contacts-section">
+                <div class="container">
+                    <div class="col">
+                        <div class="image" style="background-image: url('https://www.popsci.com/sites/popsci.com/files/styles/1000_1x_/public/images/2018/02/00-taking-photos.jpg?itok=2zWTBy2A&fc=50,50');"></div>
+                    </div>
+                    <div class="col">
+                        <div class="contact-form-holder">
+                            <h3>Если у Вас возникли вопросы, воспользуйтесь контактной формой или любым удобным для вас способом.</h3>
+                            <form action="#">
+                                <input type="text" placeholder="Ваше Имя">
+                                <input type="tel" placeholder="Номер Телефона">
+                                <input type="submit" value="Оставить Заявку" class="btn">
+                            </form>
+                            <p class="tip">*Ваши данные не будут переданы третьим лицам</p>
+                        </div>
+                        <div class="contacts-holder">
+                            <h3>Наши Контакты</h3>
+                            <div class="contact-data">
+                                <span>E-mail</span>
+                                <a href="mailto:name123@gmail.com">name123@gmail.com</a>
+                            </div>
+                            <div class="contact-data">
+                                <span>Телефон</span>
+                                <ul>
+                                    <li><a href="tel:+380 99 123 45 67">+380 99 123 45 67</a></li>
+                                    <li><a href="tel:+380 99 123 45 67">+380 99 123 45 67</a></li>
+                                    <li><a href="tel:+380 99 123 45 67">+380 99 123 45 67</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+		{% include "./components/footer.html" %}
+	</div>
+</body>
+</html>
