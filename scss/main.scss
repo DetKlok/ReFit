@@ -174,8 +174,6 @@ span {
 	&.small {
 		font-size: 16px;
 	}
-
-
 }
 
 // HEADER STYLES
@@ -186,6 +184,62 @@ span {
 	justify-content: space-between;
 	align-items: center;
 
+	.nav {
+		li {
+			display: flex;
+			align-items: center;
+			margin: 0 60px;
+			padding: 20px 0;
+			position: relative;
+
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+
+			&:after {
+				content: '';
+				height: 6px;
+				width: 6px;
+				background-color: $pale;
+				display: inline-block;
+				position: absolute;
+				right: -60px;
+			}
+
+			&.hover {
+				&>a {
+					color: $pale;
+				}
+
+				.dropdown {
+					max-height: 600px;
+
+					ul {
+						transform: translateY(0);
+					}
+				}
+			}
+		}
+
+		a {
+			i {
+				vertical-align: text-top;
+				margin-left: 5px;
+			}
+		}
+	}
+	
+	a {
+		font-family: $base-font-serif;
+		color: $black;
+		text-decoration: none;
+		transition: border-radius 0.3s, color 0.3s;
+		font-size: 15px;
+
+	}
+
 	ul {
 		@extend %listreset;
 		display: flex;
@@ -195,6 +249,12 @@ span {
 	.contacts {
 		display: flex;
 		align-items: center;
+
+		&>a {
+			&:hover {
+				color: $pale;
+			}
+		}
 
 		.tel {
 			font-family: $base-font-sans-serif;
@@ -207,46 +267,47 @@ span {
 		}
 	}
 
-	a {
-		font-family: $base-font-serif;
-		color: $black;
-		text-decoration: none;
-		transition: color 0.3s;
-		font-size: 15px;
+	.dropdown {
+		position: absolute;
+		z-index: 2;
+		top: 100%;
+		left: 0;
+		width: 275px;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s;
+		box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
 
-		&:hover {
-			color: $pale;
+		ul {
+			display: block;
+			background-color: $white;
+			padding: 35px 30px;
+			transform: translateY(-100%);
+			transition: transform 0.3s;
+
+			li {
+				margin: 0 0 20px;
+				padding: 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				&:after {
+					display: none;
+				}
+			}
 		}
 	}
+
 }
 
 .logo {
-	max-width: 170px;
+	max-width: 62px;
 	width: 100%;
 
 	a {
 		display: block;
-	}
-}
-
-.nav {
-	li {
-		display: flex;
-		align-items: center;
-
-		&:last-child {
-			&:after {
-				display: none;
-			}
-		}
-		&:after {
-			content: '';
-			height: 6px;
-			width: 6px;
-			background-color: $pale;
-			display: inline-block;
-			margin: 0 60px;
-		}
 	}
 }
 
