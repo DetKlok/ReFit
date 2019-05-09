@@ -179,18 +179,27 @@ span {
 // HEADER STYLES
 
 #header {
-	padding: 24px $section-spacing;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	position: relative;
+	.holder {
+		padding: 24px $section-spacing;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+	}
 
 	.nav {
 		li {
 			display: flex;
 			align-items: center;
-			margin: 0 60px;
 			padding: 20px 0;
+			margin: 0 30px;
 			position: relative;
+
+			@include media('>=widescreen') {
+				margin: 0 60px;
+
+			}
 
 			&:last-child {
 				&:after {
@@ -205,7 +214,11 @@ span {
 				background-color: $pale;
 				display: inline-block;
 				position: absolute;
-				right: -60px;
+				right: -30px;
+
+				@include media('>=widescreen') {
+					right: -60px;
+				}
 			}
 
 			&.hover {
@@ -300,11 +313,57 @@ span {
 		}
 	}
 
+	.nav-opener{
+		height: 62px;
+		width: 62px;
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform:translateY(-50%);
+		border: 1px solid $black;
+		padding: 15px;
+
+		span,
+		&:after,
+		&:before {
+			content: '';
+			display: block;
+			height: 2px;
+			width: calc(100% - 30px);
+			background-color: $black;
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			margin-top: -1px;
+		}
+
+		&:after {
+			top: 15px;
+		}
+
+		&:before {
+			bottom: 15px;
+			top: auto;
+		}
+		@include media('>=desktop') {
+			display: none;
+		}
+	}
+
 }
 
 .logo {
 	max-width: 62px;
 	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+	left: 15px;
+
+	@include media('>=desktop') {
+		position: static;
+	}
 
 	a {
 		display: block;
