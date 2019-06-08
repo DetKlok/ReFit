@@ -363,6 +363,7 @@ span {
 
 	@include media('>=desktop') {
 		position: static;
+		transform: none;
 	}
 
 	a {
